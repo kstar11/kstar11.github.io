@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="最基本的模块-url这节我们一起来学习一下最后要单独讲解的 NodeJS 基础模块-url 模块;
+看到 url 这 3 个字母,你一定不陌生,甚至很熟悉!!是的,统一资源定位符–&amp;gt;简称 url 也就是我们常说的网址;
+那么在 NodeJS 中 url 能处理什么事情呢?能应对什么样的功能场景">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="kstar11">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="NodeJS-1.6 最基本的模块-url">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="齐烟九点">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>NodeJS-1.6 最基本的模块-url - 齐烟九点</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    文章
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/">
+            <i class="logoimg" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/09/最基本的模块-url/">
+                NodeJS-1.6 最基本的模块-url
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="最基本的模块-url"><a href="#最基本的模块-url" class="headerlink" title="最基本的模块-url"></a>最基本的模块-url</h1><p>这节我们一起来学习一下最后要单独讲解的 NodeJS 基础模块-url 模块;</p>
+<p>看到 url 这 3 个字母,你一定不陌生,甚至很熟悉!!是的,统一资源定位符–&gt;简称 url 也就是我们常说的网址;</p>
+<p>那么在 NodeJS 中 url 能处理什么事情呢?能应对什么样的功能场景呢?</p>
+<p><strong>首先,这里透露一下,url 一般会在我们分析 request 请求体的时候起作用</strong></p>
+<p>接下来,看代码:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.url);</span><br><span class="line">  <span class="built_in">console</span>.log(url.parse(req.url));</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">"content-type"</span>: <span class="string">"text/html"</span> &#125;);</span><br><span class="line">  res.end(<span class="string">`your are visiting <span class="subst">$&#123;req.url&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我们使用 node 命令运行这段代码,然后打开浏览器,与之前不同的是,这次我们要输入带路径带参数的地址,如<a href="http://localhost:3000/user?username=oldjin&amp;password=123456" target="_blank" rel="noopener">http://localhost:3000/user?username=oldjin&amp;password=123456</a></p>
+<p>之前强调过很多次,request(简写为 req)是来自客户端的请求,而 req.url 则是用户访问的具体路径;</p>
+<p>通过 console.log 和页面输出的内容,我们很容易理解 req.url 是神马东西,而这次要讲解的重点,则在于 url 模块</p>
+<p>url 模块提供了很多好用的 api,一般都是用于解析 url 地址或者生成一个全新的 url 地址;</p>
+<h4 id="url-parse-url-路径解析"><a href="#url-parse-url-路径解析" class="headerlink" title="url.parse(url) 路径解析"></a>url.parse(url) 路径解析</h4><p>此方法返回一个对象,对象的属性就是被解析后的 url 分解形成的;<br>用得最多的一般是:</p>
+<ul>
+<li><p>search || query (他们的区别就是一个?)<br>search 就是我们 get 请求中的查询参数,queystring/queryparameters,当然这里我们拿到的是字符串 string,但是经过转换后即可获得一个完整的对象,从而进行数据库查询或者其他判断事件;</p>
+</li>
+<li><p>pathname<br>访问的具体地址,看到这个/user,不知你是否联想到了 SPA 单页应用中的路由!!而恰好,在 NodeJS 中实现路由,正是通过 pathname;</p>
+</li>
+<li><p>hash,port,path,href…<br>这些就不做太深入解释了,请大家自行了解;</p>
+</li>
+</ul>
+<h4 id="new-url-URL-path-host"><a href="#new-url-URL-path-host" class="headerlink" title="new url.URL(path,host);"></a>new url.URL(path,host);</h4><figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; URL &#125; = url;</span><br><span class="line"><span class="keyword">let</span> myurl = <span class="keyword">new</span> URL(<span class="string">"/login"</span>, <span class="string">"http://localhost:3000"</span>);</span><br></pre></td></tr></table></figure>
+<p>生成一个新的 url 地址,后面的参数是主机地址,前面是路径;</p>
+<hr>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/url.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/NodeJS/">#NodeJS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    <a href="https://github.com/klugjo">主题参考</a>
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/07/31/最Low的路由/">最Low的路由</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/09/最基本的模块-url/">NodeJS-1.6 最基本的模块-url</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/最Easy的Web服务器/">NodeJS-1.7 最Easy的Web服务器</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/30/最基本的模块-path/">NodeJS-1.4 最基本的模块-path</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Webpack/">Webpack</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/React/">React</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Node/">Node</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/kstar11">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:liuxuanpei@hotmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    © 2019 kstar-东君
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

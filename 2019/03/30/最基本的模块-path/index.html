@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="最基本的模块-pathhttp 协议是我们开发过程中使用的最多的协议,因此我们对于 http 模块也肯定不陌生,多写几次就一定能得心应手,这一节我们要解释的这个模块,我们工作中天天用到,但是你却不一定对它了解,它就是–path;
+path 模块可能是 NodeJS 中业务量最大的一个模块,path:">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="kstar11">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="NodeJS-1.4 最基本的模块-path">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="齐烟九点">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>NodeJS-1.4 最基本的模块-path - 齐烟九点</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    文章
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/">
+            <i class="logoimg" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/30/最基本的模块-path/">
+                NodeJS-1.4 最基本的模块-path
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-30</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="最基本的模块-path"><a href="#最基本的模块-path" class="headerlink" title="最基本的模块-path"></a>最基本的模块-path</h1><p>http 协议是我们开发过程中使用的最多的协议,因此我们对于 http 模块也肯定不陌生,多写几次就一定能得心应手,这一节我们要解释的这个模块,我们工作中天天用到,但是你却不一定对它了解,它就是–path;</p>
+<p>path 模块可能是 NodeJS 中业务量最大的一个模块,path:路径,引路人,通常都是最繁忙的,我们读取文件,编写逻辑的过程中,很多时候都会用到 path 去解析路径,尤其是文件上传!</p>
+<p>如同我们写 html/css,为 img 标签指定 src 的时候,可以用绝对路径/相对路径,在 NodeJS 中,我们也是这样的概念;</p>
+<p>这一节,我们也只介绍 path 模块的部分主要 api,至于其他不常用的 api,请大家自行练习;</p>
+<hr>
+<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>path.relative(source,destination);</p>
+<p>这个方法将返回从 source 到 destination 的相对路径,即是(./xxx/xxx || ../xxx/xxx),此方法用得较少;</p>
+<p>path.join(path1,path2,path3…);</p>
+<p>此方法将会把传入的 path 片段组成一个规范的路径地址返回,如:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> path1 = path.join(<span class="string">"examples"</span>, <span class="string">"HelloNode"</span>, <span class="string">"test.js"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path1);</span><br><span class="line"><span class="comment">// /examples/HelloNode/test.js</span></span><br></pre></td></tr></table></figure>
+<h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>path.resolve(path1,path2…);</p>
+<p>这个方法将返回一个绝对路径,能生成绝对路径的 path 参数将被使用,不能生成的将被抛弃,如果不传参,返回当前工作目录的绝对路径;</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> path1 = path.resolve(<span class="string">"examples"</span>, <span class="string">"HelloNode"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path1);</span><br><span class="line"><span class="comment">// X:/NodeJS-Note/examples/HelloNode</span></span><br></pre></td></tr></table></figure>
+<p>在 NodeJS 中,有一个<strong>dirname 的全局变量,使用</strong>dirname 可以获得当前文件夹的绝对路径,于是乎,工作中一般会直接使用 path.join(__dirname,’../xxx’);</p>
+<p>同时,请自行理解__filename 以及 process.cwd();</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>path.parse(path);</p>
+<p>//返回一个对象,包含从 path 的根路径到文件名的全部信息;</p>
+<p>path.isAbsolute(path);</p>
+<p>//返回一个 Boolean,判断 path 是否为绝对路径;</p>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/path.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/NodeJS/">#NodeJS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    <a href="https://github.com/klugjo">主题参考</a>
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/07/31/最Low的路由/">最Low的路由</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/09/最基本的模块-url/">NodeJS-1.6 最基本的模块-url</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/最Easy的Web服务器/">NodeJS-1.7 最Easy的Web服务器</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/30/最基本的模块-path/">NodeJS-1.4 最基本的模块-path</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Webpack/">Webpack</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/React/">React</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Node/">Node</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/kstar11">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:liuxuanpei@hotmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    © 2019 kstar-东君
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

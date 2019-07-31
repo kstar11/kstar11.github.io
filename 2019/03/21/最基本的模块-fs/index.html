@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="最基本的模块-fs前面我们讲解了 http 模块和 path 模块,这 2 个模块,理解起来并不难,使用起来也很方便,因为我们在工作中经常与路径,web 服务打交道;
+这一节我们讲解的模块是 fs 模块,看到 fs 你是不是脑壳一懵,fs 是神马鬼?
+fs 模块是 NodeJS 用于应对解析文件和文">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="kstar11">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="NodeJS-1.5 最基本的模块-fs">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="齐烟九点">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>NodeJS-1.5 最基本的模块-fs - 齐烟九点</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    文章
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/">
+            <i class="logoimg" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/21/最基本的模块-fs/">
+                NodeJS-1.5 最基本的模块-fs
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="最基本的模块-fs"><a href="#最基本的模块-fs" class="headerlink" title="最基本的模块-fs"></a>最基本的模块-fs</h1><p>前面我们讲解了 http 模块和 path 模块,这 2 个模块,理解起来并不难,使用起来也很方便,因为我们在工作中经常与路径,web 服务打交道;</p>
+<p>这一节我们讲解的模块是 fs 模块,看到 fs 你是不是脑壳一懵,fs 是神马鬼?</p>
+<p>fs 模块是 NodeJS 用于应对解析文件和文件夹这一场景的,我们前端程序员,之前除了在文件上传中会操作到文件系统,平时一般没机会操作文件,所以这一节,大家要多多用心!!</p>
+<hr>
+<ul>
+<li><h5 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h5></li>
+</ul>
+<p>fs.readFile(path,options,callback)</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.readFile(<span class="string">"../NodeJS基础入门/从开始写起.md"</span>, <span class="string">"utf8"</span>, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 当文件不存在或者路径解析错误时将触发err</span></span><br></pre></td></tr></table></figure>
+<p>从上面的例子,我们不难看出,fs.readFile 方法是一个经典的异步回调方法,就如我们在经典 ajax 中的 success 一样,离开 callback 的范围,文件的内容将无法获得;</p>
+<p>fs.readFileSync(path,options);</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> mdfile = fs.readFileSync(<span class="string">"../NodeJS基础入门/从开始写起.md"</span>, <span class="string">"utf8"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mdfile);</span><br><span class="line"><span class="comment">// 当文件不存在或者路径解析错误时将触发err</span></span><br></pre></td></tr></table></figure>
+<p>通过这个例子,我们不难想象,ES6+提出的 async/await(当然,如果你没了解过 async/await,请百度);</p>
+<ul>
+<li><h5 id="读取文件夹"><a href="#读取文件夹" class="headerlink" title="读取文件夹"></a>读取文件夹</h5></li>
+</ul>
+<p>fs.readdir(path,options,callback);</p>
+<p>与 readFile 一样,readdir 返回的是 path 所在的目录下所有的文件以及文件夹;</p>
+<p>fs.readdirSync 同 readFileSync;</p>
+<ul>
+<li><h5 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h5></li>
+</ul>
+<p>fs.writeFile(file,data,options,callback);</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.writeFile(<span class="string">"./text.txt"</span>, <span class="string">"测试一下文件写入"</span>, <span class="string">"utf8"</span>, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"文件已保存!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 当文件不存在时自动创建</span></span><br><span class="line"><span class="comment">// 因为NodeJS的异步问题,杜绝同时对一个文件进行多次写入</span></span><br></pre></td></tr></table></figure>
+<p>fs.writeFileSync(file,data,options);</p>
+<p>此 api 返回 undefined,调用即执行;</p>
+<hr>
+<p>其他 api:</p>
+<p>//文件信息</p>
+<p>fs.stat()</p>
+<p>//复制文件 =&gt;有 sync 版本</p>
+<p>fs.copyFile(source,destination,options,callback);</p>
+<p>//创建文件夹 =&gt;有 sync 版本</p>
+<p>fs.mkdir(source,destination,options,callback);</p>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/fs.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/NodeJS/">#NodeJS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    <a href="https://github.com/klugjo">主题参考</a>
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/07/31/最Low的路由/">最Low的路由</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/09/最基本的模块-url/">NodeJS-1.6 最基本的模块-url</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/最Easy的Web服务器/">NodeJS-1.7 最Easy的Web服务器</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/30/最基本的模块-path/">NodeJS-1.4 最基本的模块-path</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Webpack/">Webpack</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/React/">React</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Node/">Node</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/kstar11">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:liuxuanpei@hotmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    © 2019 kstar-东君
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

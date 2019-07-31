@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="kstar11">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="齐烟九点">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="齐烟九点">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>齐烟九点</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    文章
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/">
+            <i class="logoimg" aria-hidden="true"></i>
+        </a>
+        
+        <h1 id="main-title" class="title">齐烟九点</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/07/31/最Low的路由/">
+                最Low的路由
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-07-31</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最-Low-的路由"><a href="#最-Low-的路由" class="headerlink" title="最 Low 的路由"></a>最 Low 的路由</h1><h5 id="上一篇，我们完成了一个最简单的-web-服务器，但是这个程序过于简单了，就只有一个页面-无论我们使用什么路径访问，它都只有一个页面；"><a href="#上一篇，我们完成了一个最简单的-web-服务器，但是这个程序过于简单了，就只有一个页面-无论我们使用什么路径访问，它都只有一个页面；" class="headerlink" title="上一篇，我们完成了一个最简单的 web 服务器，但是这个程序过于简单了，就只有一个页面,无论我们使用什么路径访问，它都只有一个页面；"></a>上一篇，我们完成了一个最简单的 web 服务器，但是这个程序过于简单了，就只有一个页面,无论我们使用什么路径访问，它都只有一个页面；</h5><h5 id="说道这里，大家肯定也就联想到了我们在-React、Vue-等-SPA-中做过的事情，编写路由，那么怎么样在-node-中实现路由呢？"><a href="#说道这里，大家肯定也就联想到了我们在-React、Vue-等-SPA-中做过的事情，编写路由，那么怎么样在-node-中实现路由呢？" class="headerlink" title="说道这里，大家肯定也就联想到了我们在 React、Vue 等 SPA 中做过的事情，编写路由，那么怎么样在 node 中实现路由呢？"></a>说道这里，大家肯定也就联想到了我们在 React、Vue 等 SPA 中做过的事情，编写路由，那么怎么样在 node 中实现路由呢？</h5><h5 id="其实方法比较土，就是利用-http-请求的-request-对象的-path-进行分支判断，代码如下："><a href="#其实方法比较土，就是利用-http-请求的-request-对象的-path-进行分支判断，代码如下：" class="headerlink" title="其实方法比较土，就是利用 http 请求的 request 对象的 path 进行分支判断，代码如下："></a>其实方法比较土，就是利用 http 请求的 request 对象的 path 进行分支判断，代码如下：</h5><figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> route = url.parse(req.url).pathname;</span><br><span class="line">  <span class="keyword">let</span> htmlString;</span><br><span class="line">  <span class="keyword">switch</span> (route) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"/login"</span>:</span><br><span class="line">      htmlString = <span class="string">"您好！欢迎登陆！"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"/home"</span>:</span><br><span class="line">      htmlString = <span class="string">"欢迎光临，这是我的个人首页！"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      htmlString = <span class="string">"这是一个简单网站的路由"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/html; charset=utf-8"</span> &#125;);</span><br><span class="line">  res.write(htmlString);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="代码相对较土，思路就是通过访问路径的-path-进行分支判断，然后针对每个分支进行单独的渲染；"><a href="#代码相对较土，思路就是通过访问路径的-path-进行分支判断，然后针对每个分支进行单独的渲染；" class="headerlink" title="代码相对较土，思路就是通过访问路径的 path 进行分支判断，然后针对每个分支进行单独的渲染；"></a>代码相对较土，思路就是通过访问路径的 path 进行分支判断，然后针对每个分支进行单独的渲染；</h5><h5 id="前面我们说过，在-request-对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；"><a href="#前面我们说过，在-request-对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；" class="headerlink" title="前面我们说过，在 request 对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；"></a>前面我们说过，在 request 对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；</h5>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/04/09/最基本的模块-url/">
+                NodeJS-1.6 最基本的模块-url
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最基本的模块-url"><a href="#最基本的模块-url" class="headerlink" title="最基本的模块-url"></a>最基本的模块-url</h1><p>这节我们一起来学习一下最后要单独讲解的 NodeJS 基础模块-url 模块;</p>
+<p>看到 url 这 3 个字母,你一定不陌生,甚至很熟悉!!是的,统一资源定位符–&gt;简称 url 也就是我们常说的网址;</p>
+<p>那么在 NodeJS 中 url 能处理什么事情呢?能应对什么样的功能场景呢?</p>
+<p><strong>首先,这里透露一下,url 一般会在我们分析 request 请求体的时候起作用</strong></p>
+<p>接下来,看代码:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.url);</span><br><span class="line">  <span class="built_in">console</span>.log(url.parse(req.url));</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">"content-type"</span>: <span class="string">"text/html"</span> &#125;);</span><br><span class="line">  res.end(<span class="string">`your are visiting <span class="subst">$&#123;req.url&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我们使用 node 命令运行这段代码,然后打开浏览器,与之前不同的是,这次我们要输入带路径带参数的地址,如<a href="http://localhost:3000/user?username=oldjin&amp;password=123456" target="_blank" rel="noopener">http://localhost:3000/user?username=oldjin&amp;password=123456</a></p>
+<p>之前强调过很多次,request(简写为 req)是来自客户端的请求,而 req.url 则是用户访问的具体路径;</p>
+<p>通过 console.log 和页面输出的内容,我们很容易理解 req.url 是神马东西,而这次要讲解的重点,则在于 url 模块</p>
+<p>url 模块提供了很多好用的 api,一般都是用于解析 url 地址或者生成一个全新的 url 地址;</p>
+<h4 id="url-parse-url-路径解析"><a href="#url-parse-url-路径解析" class="headerlink" title="url.parse(url) 路径解析"></a>url.parse(url) 路径解析</h4><p>此方法返回一个对象,对象的属性就是被解析后的 url 分解形成的;<br>用得最多的一般是:</p>
+<ul>
+<li><p>search || query (他们的区别就是一个?)<br>search 就是我们 get 请求中的查询参数,queystring/queryparameters,当然这里我们拿到的是字符串 string,但是经过转换后即可获得一个完整的对象,从而进行数据库查询或者其他判断事件;</p>
+</li>
+<li><p>pathname<br>访问的具体地址,看到这个/user,不知你是否联想到了 SPA 单页应用中的路由!!而恰好,在 NodeJS 中实现路由,正是通过 pathname;</p>
+</li>
+<li><p>hash,port,path,href…<br>这些就不做太深入解释了,请大家自行了解;</p>
+</li>
+</ul>
+<h4 id="new-url-URL-path-host"><a href="#new-url-URL-path-host" class="headerlink" title="new url.URL(path,host);"></a>new url.URL(path,host);</h4><figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; URL &#125; = url;</span><br><span class="line"><span class="keyword">let</span> myurl = <span class="keyword">new</span> URL(<span class="string">"/login"</span>, <span class="string">"http://localhost:3000"</span>);</span><br></pre></td></tr></table></figure>
+<p>生成一个新的 url 地址,后面的参数是主机地址,前面是路径;</p>
+<hr>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/url.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/04/02/最Easy的Web服务器/">
+                NodeJS-1.7 最Easy的Web服务器
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最-Easy-的-Web-服务器"><a href="#最-Easy-的-Web-服务器" class="headerlink" title="最 Easy 的 Web 服务器"></a>最 Easy 的 Web 服务器</h1><h5 id="前面我们学习了-NodeJS-中几个最常用的模块-通过这些模块-我们可以组合出一个简单的-web-服务器进行使用-先上代码"><a href="#前面我们学习了-NodeJS-中几个最常用的模块-通过这些模块-我们可以组合出一个简单的-web-服务器进行使用-先上代码" class="headerlink" title="前面我们学习了 NodeJS 中几个最常用的模块,通过这些模块,我们可以组合出一个简单的 web 服务器进行使用,先上代码:"></a>前面我们学习了 NodeJS 中几个最常用的模块,通过这些模块,我们可以组合出一个简单的 web 服务器进行使用,先上代码:</h5><figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> htmlString = fs.readFileSync(path.join(__dirname, <span class="string">'test.html'</span>), <span class="string">'utf8'</span>);</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> &#125;);</span><br><span class="line">    res.write(htmlString);</span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p>代码解析:<br>1 首先我们分别引入了 http,path,fs 模块;</p>
+<p>2 随后我们使用 http.createServer 创建一个 web 应用;</p>
+<p>3 使用 fs.readFileSync 读取 test.html 的内容,文件路径使用 path.join 进行解析;</p>
+<p>4 使用 res 描述响应状态和 content-type;</p>
+<p>5 将读取到的文件信息的字符串内容传递给 res 的内容区域;</p>
+<p>6 完成并结束返回信息</p>
+<hr>
+<h6 id="基础知识讲解到这里就结束了-但是还有很多模块和-api-不曾讲解-因为太多太细"><a href="#基础知识讲解到这里就结束了-但是还有很多模块和-api-不曾讲解-因为太多太细" class="headerlink" title="基础知识讲解到这里就结束了,但是还有很多模块和 api 不曾讲解,因为太多太细;"></a>基础知识讲解到这里就结束了,但是还有很多模块和 api 不曾讲解,因为太多太细;</h6><h6 id="有空的时候一定要把所有模块全部过一遍-不求甚解-起码要知道模块是干什么用的-能应对什么场景"><a href="#有空的时候一定要把所有模块全部过一遍-不求甚解-起码要知道模块是干什么用的-能应对什么场景" class="headerlink" title="有空的时候一定要把所有模块全部过一遍,不求甚解,起码要知道模块是干什么用的,能应对什么场景;"></a>有空的时候一定要把所有模块全部过一遍,不求甚解,起码要知道模块是干什么用的,能应对什么场景;</h6><h6 id="在学习基本知识的时候-还是希望能多练习-因为后续一旦开始学习框架-你就不会再反过头来学习基础知识了-最终的后果就是头重脚轻-不得章法"><a href="#在学习基本知识的时候-还是希望能多练习-因为后续一旦开始学习框架-你就不会再反过头来学习基础知识了-最终的后果就是头重脚轻-不得章法" class="headerlink" title="在学习基本知识的时候,还是希望能多练习,因为后续一旦开始学习框架,你就不会再反过头来学习基础知识了,最终的后果就是头重脚轻,不得章法;"></a>在学习基本知识的时候,还是希望能多练习,因为后续一旦开始学习框架,你就不会再反过头来学习基础知识了,最终的后果就是头重脚轻,不得章法;</h6><h6 id="后续我们将开启-express-学习"><a href="#后续我们将开启-express-学习" class="headerlink" title="后续我们将开启 express 学习!!"></a>后续我们将开启 express 学习!!</h6>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/30/最基本的模块-path/">
+                NodeJS-1.4 最基本的模块-path
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-30</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最基本的模块-path"><a href="#最基本的模块-path" class="headerlink" title="最基本的模块-path"></a>最基本的模块-path</h1><p>http 协议是我们开发过程中使用的最多的协议,因此我们对于 http 模块也肯定不陌生,多写几次就一定能得心应手,这一节我们要解释的这个模块,我们工作中天天用到,但是你却不一定对它了解,它就是–path;</p>
+<p>path 模块可能是 NodeJS 中业务量最大的一个模块,path:路径,引路人,通常都是最繁忙的,我们读取文件,编写逻辑的过程中,很多时候都会用到 path 去解析路径,尤其是文件上传!</p>
+<p>如同我们写 html/css,为 img 标签指定 src 的时候,可以用绝对路径/相对路径,在 NodeJS 中,我们也是这样的概念;</p>
+<p>这一节,我们也只介绍 path 模块的部分主要 api,至于其他不常用的 api,请大家自行练习;</p>
+<hr>
+<h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>path.relative(source,destination);</p>
+<p>这个方法将返回从 source 到 destination 的相对路径,即是(./xxx/xxx || ../xxx/xxx),此方法用得较少;</p>
+<p>path.join(path1,path2,path3…);</p>
+<p>此方法将会把传入的 path 片段组成一个规范的路径地址返回,如:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> path1 = path.join(<span class="string">"examples"</span>, <span class="string">"HelloNode"</span>, <span class="string">"test.js"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path1);</span><br><span class="line"><span class="comment">// /examples/HelloNode/test.js</span></span><br></pre></td></tr></table></figure>
+<h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>path.resolve(path1,path2…);</p>
+<p>这个方法将返回一个绝对路径,能生成绝对路径的 path 参数将被使用,不能生成的将被抛弃,如果不传参,返回当前工作目录的绝对路径;</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> path1 = path.resolve(<span class="string">"examples"</span>, <span class="string">"HelloNode"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path1);</span><br><span class="line"><span class="comment">// X:/NodeJS-Note/examples/HelloNode</span></span><br></pre></td></tr></table></figure>
+<p>在 NodeJS 中,有一个<strong>dirname 的全局变量,使用</strong>dirname 可以获得当前文件夹的绝对路径,于是乎,工作中一般会直接使用 path.join(__dirname,’../xxx’);</p>
+<p>同时,请自行理解__filename 以及 process.cwd();</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>path.parse(path);</p>
+<p>//返回一个对象,包含从 path 的根路径到文件名的全部信息;</p>
+<p>path.isAbsolute(path);</p>
+<p>//返回一个 Boolean,判断 path 是否为绝对路径;</p>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/path.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/29/最基本的模块-http/">
+                NodeJS-1.3 最基本的模块-http
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最基本的模块-http"><a href="#最基本的模块-http" class="headerlink" title="最基本的模块-http"></a>最基本的模块-http</h1><p>在 NodeJS 中,有很多内置的功能模块,分别应对不同的场景,使用它们,只需要通过 require(‘模块名’)即可,作为 web 前端开发,我们最熟悉,遇到过最多的场景,一般就是 http,毕竟 web 网页都是基于 http 协议的;</p>
+<p>NodeJS 的 http 模块,功能十分强劲,有很多实用的 api,如果一一解析,那肯定是讲不完的,这里我们只列举工作中最常用的 api 进行解释,后续如果有时间,一定要仔细地研究一遍哦~!</p>
+<ul>
+<li><h4 id="http-作为服务端"><a href="#http-作为服务端" class="headerlink" title="http 作为服务端"></a>http 作为服务端</h4></li>
+</ul>
+<p>http 作为服务端的效果,在上一节我们已经体验过了,我们可以调用 http.createServer 方法创建一个应用,然后安排一个端口监听这个应用即可完成一个最简单的 web 服务器;</p>
+<p>无须怀疑,这个简单的 web 服务器,在解析静态资源文件方面的性能,绝对不比常见的 Apache/Tomcat/Nginx 逊色,而且更加灵活,小巧;</p>
+<p><em>PS:如果你使用 VScode 工具进行开发,并且安装过 EaseServer/liveServer 等插件,也许你会对这 2 个插件的源码感兴趣</em></p>
+<p>使用 http.createServer 的时候,最重要就是后续的回调函数,这个回调函数决定了我们应用的全部内容,再次重申:</p>
+<ul>
+<li><h5 id="request-参数是来自请求方的信息-我们可以从-request-里面获得客户端的-cookie-content-type-查询参数-a-1-amp-b-2…-请求方式-get-post-delete-patch-put…"><a href="#request-参数是来自请求方的信息-我们可以从-request-里面获得客户端的-cookie-content-type-查询参数-a-1-amp-b-2…-请求方式-get-post-delete-patch-put…" class="headerlink" title="request 参数是来自请求方的信息,我们可以从 request 里面获得客户端的 cookie,content-type,查询参数(?a=1&amp;b=2…),请求方式(get,post,delete,patch,put…);"></a>request 参数是来自请求方的信息,我们可以从 request 里面获得客户端的 cookie,content-type,查询参数(?a=1&amp;b=2…),请求方式(get,post,delete,patch,put…);</h5></li>
+<li><h5 id="response-参数是我们当前应用要返回给请求者的信息-我们可以根据条件设置响应状态-响应媒体-content-type-响应头部信息-响应数据等"><a href="#response-参数是我们当前应用要返回给请求者的信息-我们可以根据条件设置响应状态-响应媒体-content-type-响应头部信息-响应数据等" class="headerlink" title="response 参数是我们当前应用要返回给请求者的信息,我们可以根据条件设置响应状态,响应媒体 content-type,响应头部信息,响应数据等;"></a>response 参数是我们当前应用要返回给请求者的信息,我们可以根据条件设置响应状态,响应媒体 content-type,响应头部信息,响应数据等;</h5></li>
+<li><h4 id="http-作为客户端"><a href="#http-作为客户端" class="headerlink" title="http 作为客户端"></a>http 作为客户端</h4></li>
+</ul>
+<p>使用 http 模块作为客户端,一般是用于发送请求;</p>
+<p>使用方式及其简单,http.request(url,options,callback)即可发送最简单的请求;</p>
+<p>当然 http.get(url,options,callback)这样的方式也是可以的;</p>
+<p><strong>实际开发中我们一般会使用第三方插件进行请求,例如 superagent,fetch,curl 等,原生 http.request 的方法要把值解析出来还挺麻烦的,当然,有空的话,一定要试着自己去解析一波!</strong></p>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/http.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/28/NodeJS笔记本/">
+                NodeJS笔记本
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-28</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="全目录"><a href="#全目录" class="headerlink" title="全目录"></a>全目录</h3><ul>
+<li><a href>1 NodeJS 基础</a><ul>
+<li><a href="./从开始写起.md">1.1 从开始写起</a></li>
+<li><a href="./最Low的Node应用.md">1.2 最 Low 的 Node 应用</a></li>
+<li><a href="./最基本的模块-http.md">1.3 最基本的模块-http</a></li>
+<li><a href="./最基本的模块-path.md">1.4 最基本的模块-path</a></li>
+<li><a href="./最基本的模块-fs.md">1.5 最基本的模块-fs</a></li>
+<li><a href="./最基本的模块-url.md">1.6 最基本的模块-url</a></li>
+<li><a href="./最Easy的Web服务器.md">1.7 最 Easy 的 Web 服务器</a></li>
+</ul>
+</li>
+<li>[2 NodeJS 初探-express]<ul>
+<li><a href="./最Low的路由">2.1 最 Low 的路由</a></li>
+<li>[2.2 从路由获取我们要的]</li>
+<li>[2.3 express 是最好的]</li>
+<li>[2.4 什么叫做中间件?]</li>
+<li>[2.5 使用 nunjucks 模板引擎]</li>
+<li>[2.6 实现最简单的文件上传]</li>
+<li>[2.7 接下来,我们聊聊关于接口的事]</li>
+<li>[2.8 抛开数据库来聊 Restful API]</li>
+</ul>
+</li>
+<li>[3 NodeJS 进阶]<ul>
+<li>[3.1 使用 mysql 数据库]</li>
+<li>[3.2 使用 mongodb 数据库]</li>
+<li>[3.3 使用 cookie]</li>
+<li>[3.4 实现 session]</li>
+<li>[3.5 关于工程规范及代码优化]</li>
+<li>[3.6 关于一个完整应用的设计思路和方案]</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/28/最Low的Node应用/">
+                NodeJS-1.2 最Low的Node应用
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-28</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="最-Low-的-Node-应用"><a href="#最-Low-的-Node-应用" class="headerlink" title="最 Low 的 Node 应用"></a>最 Low 的 Node 应用</h2><p>接上一节,我们已经大约知道了 Node 是如何运作的:</p>
+<ul>
+<li>NodeJS 的代码就是 JavaScript 的语法;</li>
+<li>NodeJS 的程序运行脱离开了浏览器;</li>
+</ul>
+<p>然后小白同学可能就疑问了,如果 NodeJS 的运行脱离了浏览器,那么我怎么写页面呢?<br>不要方,接下来,我们就马上尝试一下,怎么用 NodeJS 写页面;<br>先上代码,我们可以先复制下面这段代码,尝试运行,之后,我们再来一行一行的解释代码用意;</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> &#125;);</span><br><span class="line">    res.write(<span class="string">`</span></span><br><span class="line"><span class="string">    &lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">    &lt;html lang="en"&gt;</span></span><br><span class="line"><span class="string">    &lt;head&gt;</span></span><br><span class="line"><span class="string">        &lt;meta charset="UTF-8"&gt;</span></span><br><span class="line"><span class="string">        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></span><br><span class="line"><span class="string">        &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;</span></span><br><span class="line"><span class="string">        &lt;title&gt;Low&lt;/title&gt;</span></span><br><span class="line"><span class="string">    &lt;/head&gt;</span></span><br><span class="line"><span class="string">    &lt;body&gt;</span></span><br><span class="line"><span class="string">        &lt;h1&gt;这是一个很low的应用!&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;/body&gt;</span></span><br><span class="line"><span class="string">    &lt;/html&gt;</span></span><br><span class="line"><span class="string">    `</span>);</span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p>新建在 myNode 文件夹下,新建 low.js,粘贴以上代码并保存,之后打开命令行,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node low.js</span><br></pre></td></tr></table></figure>
+<p>接下来,我们打开浏览器,并在地址栏输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:3000</span><br></pre></td></tr></table></figure>
+<p>是否看到网页中显示着 <strong>这是一个很 low 的应用!</strong></p>
+<hr>
+<p>下面,我们一起来逐行分析代码:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="comment">// const不多做解释,后面的require('http')则表示引入NodeJS的http模块</span></span><br></pre></td></tr></table></figure>
+<p>首先,强制性告诉大家并记住,NodeJS 是遵从 commonjs 规范的,而 commonjs 引入其他的文件/模块就是以 require(路径)的方式进行;<br><strong>至于什么是 commonjs 规范,什么是 ESModule 请大家自行百度阮一峰前辈,或者廖雪峰前辈,他们的个人博客上面都有非常详细的介绍</strong><br>如果你对 commonjs 没有任何头绪,你可以暂时理解 require(路径)等效于我们 html 中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;路径&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>最后,http 模块是 NodeJS 众多内置模块中常用的模块之一;<br>在下一节,我们会详细讲解 NodeJS 的几大常用模块,现在,我们继续分析代码;</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">//前面我们引入的http模块,他是一个对象,在这里,我们调用他的createServer方法;</span></span><br><span class="line"><span class="comment">//createServer他在执行之后会创建一个web服务,这个方法有2个参数</span></span><br><span class="line">## 升阶思考:为什么这里会用一个回调函数来进行操作? ##</span><br><span class="line"><span class="comment">//一个request,这个是来自请求方的信息合集</span></span><br><span class="line"><span class="comment">//一个response,由我们(Node)返回过去给请求方的</span></span><br></pre></td></tr></table></figure>
+<p>对于 http,想必大家不陌生,关于三次握手这种经典的面试题就不在赘述了,这里最重要的东西就是 req 和 res,这 2 大金刚将伴随我们的 NodeJS 生涯,搞懂了 req 跟 res,NodeJS 你就掌握了一大半,所以,请牢记;<br>这次的 low 应用,我们并没使用 req 对象,没有从请求方获取信息;<br>但是对于 res,且看我们仔细分析:</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span> &#125;);</span><br><span class="line"><span class="comment">//通过res对象,将当前返回信息的状态进行修改,并制定content-type类型</span></span><br><span class="line">res.write(<span class="string">`hello`</span>);</span><br><span class="line"><span class="comment">//通过res对象编写请求反馈 ==&gt;这里为了节省代码量,用hello替代了原代码中的html字符串</span></span><br><span class="line">res.end();</span><br><span class="line"><span class="comment">//通过res的end方法,告诉对方,我的表演完毕</span></span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br><span class="line"><span class="comment">//这句话的意思就是说我们这个Node应用去监听3000端口,端口改动了,我们在浏览器里面访问的地址也要相应的改动</span></span><br></pre></td></tr></table></figure>
+<p>首先的 res.writeHead 是先告诉对方,你这次请求的反馈状态,如我们一般所知的 200,400,404,500 等,都是现有请求状态,在继续后续的动作;</p>
+<p><strong>PS:把 writeHead 里面的 200 改成 400(403,404,500),看看会有什么效果 ==&gt;记得打开控制台,看 network</strong></p>
+<p>紧跟在 200 后面的对象,是一个属性描述,告诉请求者,我反馈给你的信息的 content-type 是 text/html 类型,也就是我们常说的 web 网页;</p>
+<p><strong>PS:把 text/html 改成 text/plain 试试看</strong></p>
+<p>res.write 这个方法则是描写返回信息的详细内容,一般是 sting 或者 num 才接受;</p>
+<p><strong>PS:用 write 写一个 obj 或者 arr 试试看</strong></p>
+<p>res.end 这个方法是告诉请求者,我表演完了,没东西再给你了,你自己玩吧,我要挂断这次请求了!</p>
+<p><strong>PS:把 res.end()这个方法注释掉,看看会发生什么</strong></p>
+<h3 id="到这里-我们完成了一次经典的-http-会话"><a href="#到这里-我们完成了一次经典的-http-会话" class="headerlink" title="到这里,我们完成了一次经典的 http 会话"></a>到这里,我们完成了一次经典的 http 会话</h3><ul>
+<li><h4 id="通过打开浏览器并访问http-localhost-3000的方式向我们这个-low-js-所建立起来的-web-应用发送访问请求"><a href="#通过打开浏览器并访问http-localhost-3000的方式向我们这个-low-js-所建立起来的-web-应用发送访问请求" class="headerlink" title="通过打开浏览器并访问http://localhost:3000的方式向我们这个 low.js 所建立起来的 web 应用发送访问请求;"></a>通过打开浏览器并访问<a href>http://localhost:3000</a>的方式向我们这个 low.js 所建立起来的 web 应用发送访问请求;</h4></li>
+<li><h4 id="low-js-建立的-web-应用在收到请求之后-首先是将自己的反馈状态定义为-200-接下来告诉请求者-我要反馈给你的是-text-html-类型的数据"><a href="#low-js-建立的-web-应用在收到请求之后-首先是将自己的反馈状态定义为-200-接下来告诉请求者-我要反馈给你的是-text-html-类型的数据" class="headerlink" title="low.js 建立的 web 应用在收到请求之后,首先是将自己的反馈状态定义为 200,接下来告诉请求者,我要反馈给你的是 text/html 类型的数据;"></a>low.js 建立的 web 应用在收到请求之后,首先是将自己的反馈状态定义为 200,接下来告诉请求者,我要反馈给你的是 text/html 类型的数据;</h4></li>
+<li><h4 id="在定义完状态及反馈类型之后-再将要发送的数据返回给请求方"><a href="#在定义完状态及反馈类型之后-再将要发送的数据返回给请求方" class="headerlink" title="在定义完状态及反馈类型之后,再将要发送的数据返回给请求方;"></a>在定义完状态及反馈类型之后,再将要发送的数据返回给请求方;</h4></li>
+<li><h4 id="最后-告诉请求者-这次就这么多东西给你-还要的话请下次再来"><a href="#最后-告诉请求者-这次就这么多东西给你-还要的话请下次再来" class="headerlink" title="最后,告诉请求者,这次就这么多东西给你,还要的话请下次再来!"></a>最后,告诉请求者,这次就这么多东西给你,还要的话请下次再来!</h4></li>
+</ul>
+<hr>
+<h5 id="至此-我们这个最-low-的-Node-应用就完成了-请大家牢记-req-和-res-这-2-大金刚"><a href="#至此-我们这个最-low-的-Node-应用就完成了-请大家牢记-req-和-res-这-2-大金刚" class="headerlink" title="至此,我们这个最 low 的 Node 应用就完成了,请大家牢记 req 和 res 这 2 大金刚!!"></a>至此,我们这个最 low 的 Node 应用就完成了,请大家牢记 req 和 res 这 2 大金刚!!</h5><h5 id="也希望大家把-PS-里面的提问执行一遍-看看会有什么不同的效果-加深一下印象及理解"><a href="#也希望大家把-PS-里面的提问执行一遍-看看会有什么不同的效果-加深一下印象及理解" class="headerlink" title="也希望大家把 PS 里面的提问执行一遍,看看会有什么不同的效果,加深一下印象及理解!!"></a>也希望大家把 PS 里面的提问执行一遍,看看会有什么不同的效果,加深一下印象及理解!!</h5><h5 id="下一节我们将开始详细讲解-NodeJS-的常用模块-飙车正式提速"><a href="#下一节我们将开始详细讲解-NodeJS-的常用模块-飙车正式提速" class="headerlink" title="下一节我们将开始详细讲解 NodeJS 的常用模块~飙车正式提速!"></a>下一节我们将开始详细讲解 NodeJS 的常用模块~飙车正式提速!</h5>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/25/从开始写起/">
+                NodeJS-1.1 从开始写起…
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="从开始写起…"><a href="#从开始写起…" class="headerlink" title="从开始写起…"></a>从开始写起…</h1><p>先抛开其他的,从最基本的开始!<br>暂时忘记我们的 jQuery,Vue,Angular,React,BackBone…<br>Node 面世已经很多年了,虽然不比 Java,Php 这些老牌子,但是最近崛起的这几年,身为一名前端从业人员,如果你还不知道什么是 Node,那也许,你真的 out 了;</p>
+<ul>
+<li>首先,NodeJS 是一门跨平台的服务器语言(win,linux,MacOS…);</li>
+<li>其次,NodeJS 依赖于 Chrome 的 V8 引擎,以 JavaScript 语法为基础,进行代码解释;</li>
+<li>最后,NodeJS 是单线程,单进程,不适合做 CPU 密集型的应用,但是因为独特的异步处理机制以及其事件驱动模型,适合做高并发,I/O 密集型的应用;</li>
+</ul>
+<p><strong>其实我们都知道 NodeJS,但是我并没有后端语言基础,想了解 NodeJs,但是无从下手,文档 API 也看不明白?</strong><br>本人写这个博客的意图就在于,从零开始学习 NodeJS,从入门到老鸟,更新可能不快,但是一定会慢慢地与大家一起深入学习完 NodeJS;<br>关于 NodeJS 的安装这里就不多做赘述了,百度 NodeJS 官网,下载安装包,下一步点到底即可…相比 Java,Php 程序员,我们幸福太多…</p>
+<h3 id="开始我们的第一个-NodeJS-程序"><a href="#开始我们的第一个-NodeJS-程序" class="headerlink" title="开始我们的第一个 NodeJS 程序"></a>开始我们的第一个 NodeJS 程序</h3><p>得益于伟大的 V8 引擎,以及 JavaScript 语法,NodeJS 文件的后缀名统一都是.js(当然,现在有更规范的 typescript,.ts 也是被支持的);<br>创建 myNode 文件夹,新建 test.js,码出以下代码,并保存;</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str1 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">"NodeJS"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;str1&#125;</span><span class="subst">$&#123;str2&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<p>区别于以往在浏览器运行 js 代码的方式,我们运行 Node 代码将使用命令行执行,在安装完 NodeJS 之后,应该会自动添加 Node 和 Npm 的环境变量,这时,我们就可以在当前 myNode 文件夹下 Shift+右键,打开命令行,输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node test.js</span><br></pre></td></tr></table></figure>
+<p>仔细看看命令行界面,是否输出了 Hello Node 这一串字符!如果没有,请检查是否自动配置了 NodeJs 的环境变量;</p>
+<hr>
+<p><strong>NodeJS 是否只能以这种命令行形式出现,太麻烦了!!</strong><br><em>当然不是,目前有上百种运行 Node 程序的方案,学到你脑壳痛!~</em><br><strong>太简单的东西没有挑战性!我们需要高大上的技能!!</strong><br><em>好的,没问题,接下来我们就正式开启 NodeJS 之旅!请大家坐稳,老司机开始飙车</em></p>
+<p><a href="./NodeJS-1.2.最Low的Node应用.md">下一节 NodeJS-1.2.最 Low 的 Node 应用</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/21/最基本的模块-fs/">
+                NodeJS-1.5 最基本的模块-fs
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="最基本的模块-fs"><a href="#最基本的模块-fs" class="headerlink" title="最基本的模块-fs"></a>最基本的模块-fs</h1><p>前面我们讲解了 http 模块和 path 模块,这 2 个模块,理解起来并不难,使用起来也很方便,因为我们在工作中经常与路径,web 服务打交道;</p>
+<p>这一节我们讲解的模块是 fs 模块,看到 fs 你是不是脑壳一懵,fs 是神马鬼?</p>
+<p>fs 模块是 NodeJS 用于应对解析文件和文件夹这一场景的,我们前端程序员,之前除了在文件上传中会操作到文件系统,平时一般没机会操作文件,所以这一节,大家要多多用心!!</p>
+<hr>
+<ul>
+<li><h5 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h5></li>
+</ul>
+<p>fs.readFile(path,options,callback)</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.readFile(<span class="string">"../NodeJS基础入门/从开始写起.md"</span>, <span class="string">"utf8"</span>, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 当文件不存在或者路径解析错误时将触发err</span></span><br></pre></td></tr></table></figure>
+<p>从上面的例子,我们不难看出,fs.readFile 方法是一个经典的异步回调方法,就如我们在经典 ajax 中的 success 一样,离开 callback 的范围,文件的内容将无法获得;</p>
+<p>fs.readFileSync(path,options);</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> mdfile = fs.readFileSync(<span class="string">"../NodeJS基础入门/从开始写起.md"</span>, <span class="string">"utf8"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mdfile);</span><br><span class="line"><span class="comment">// 当文件不存在或者路径解析错误时将触发err</span></span><br></pre></td></tr></table></figure>
+<p>通过这个例子,我们不难想象,ES6+提出的 async/await(当然,如果你没了解过 async/await,请百度);</p>
+<ul>
+<li><h5 id="读取文件夹"><a href="#读取文件夹" class="headerlink" title="读取文件夹"></a>读取文件夹</h5></li>
+</ul>
+<p>fs.readdir(path,options,callback);</p>
+<p>与 readFile 一样,readdir 返回的是 path 所在的目录下所有的文件以及文件夹;</p>
+<p>fs.readdirSync 同 readFileSync;</p>
+<ul>
+<li><h5 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h5></li>
+</ul>
+<p>fs.writeFile(file,data,options,callback);</p>
+<figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line">fs.writeFile(<span class="string">"./text.txt"</span>, <span class="string">"测试一下文件写入"</span>, <span class="string">"utf8"</span>, err =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"文件已保存!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 当文件不存在时自动创建</span></span><br><span class="line"><span class="comment">// 因为NodeJS的异步问题,杜绝同时对一个文件进行多次写入</span></span><br></pre></td></tr></table></figure>
+<p>fs.writeFileSync(file,data,options);</p>
+<p>此 api 返回 undefined,调用即执行;</p>
+<hr>
+<p>其他 api:</p>
+<p>//文件信息</p>
+<p>fs.stat()</p>
+<p>//复制文件 =&gt;有 sync 版本</p>
+<p>fs.copyFile(source,destination,options,callback);</p>
+<p>//创建文件夹 =&gt;有 sync 版本</p>
+<p>fs.mkdir(source,destination,options,callback);</p>
+<p>更多 api,请自行阅读<a href="http://nodejs.cn/api/fs.html" target="_blank" rel="noopener">NodeJS 中文文档</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/02/14/Webpack笔记本/">
+                Webpack笔记本
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-02-14</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Webpack/">Webpack</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="Let’s-Start"><a href="#Let’s-Start" class="headerlink" title="Let’s Start!"></a>Let’s Start!</h3>
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="disabled" href="/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/2/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    <a href="https://github.com/klugjo">主题参考</a>
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/07/31/最Low的路由/">最Low的路由</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/09/最基本的模块-url/">NodeJS-1.6 最基本的模块-url</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/最Easy的Web服务器/">NodeJS-1.7 最Easy的Web服务器</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/30/最基本的模块-path/">NodeJS-1.4 最基本的模块-path</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Webpack/">Webpack</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/React/">React</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Node/">Node</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/kstar11">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:liuxuanpei@hotmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    © 2019 kstar-东君
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

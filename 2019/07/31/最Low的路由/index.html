@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="最 Low 的路由上一篇，我们完成了一个最简单的 web 服务器，但是这个程序过于简单了，就只有一个页面,无论我们使用什么路径访问，它都只有一个页面；说道这里，大家肯定也就联想到了我们在 React、Vue 等 SPA 中做过的事情，编写路由，那么怎么样在 node 中实现路由呢？其实方法比较土，就">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="kstar11">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="最Low的路由">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="齐烟九点">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>最Low的路由 - 齐烟九点</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    文章
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/">
+            <i class="logoimg" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/07/31/最Low的路由/">
+                最Low的路由
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-07-31</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Node/">Node</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="最-Low-的路由"><a href="#最-Low-的路由" class="headerlink" title="最 Low 的路由"></a>最 Low 的路由</h1><h5 id="上一篇，我们完成了一个最简单的-web-服务器，但是这个程序过于简单了，就只有一个页面-无论我们使用什么路径访问，它都只有一个页面；"><a href="#上一篇，我们完成了一个最简单的-web-服务器，但是这个程序过于简单了，就只有一个页面-无论我们使用什么路径访问，它都只有一个页面；" class="headerlink" title="上一篇，我们完成了一个最简单的 web 服务器，但是这个程序过于简单了，就只有一个页面,无论我们使用什么路径访问，它都只有一个页面；"></a>上一篇，我们完成了一个最简单的 web 服务器，但是这个程序过于简单了，就只有一个页面,无论我们使用什么路径访问，它都只有一个页面；</h5><h5 id="说道这里，大家肯定也就联想到了我们在-React、Vue-等-SPA-中做过的事情，编写路由，那么怎么样在-node-中实现路由呢？"><a href="#说道这里，大家肯定也就联想到了我们在-React、Vue-等-SPA-中做过的事情，编写路由，那么怎么样在-node-中实现路由呢？" class="headerlink" title="说道这里，大家肯定也就联想到了我们在 React、Vue 等 SPA 中做过的事情，编写路由，那么怎么样在 node 中实现路由呢？"></a>说道这里，大家肯定也就联想到了我们在 React、Vue 等 SPA 中做过的事情，编写路由，那么怎么样在 node 中实现路由呢？</h5><h5 id="其实方法比较土，就是利用-http-请求的-request-对象的-path-进行分支判断，代码如下："><a href="#其实方法比较土，就是利用-http-请求的-request-对象的-path-进行分支判断，代码如下：" class="headerlink" title="其实方法比较土，就是利用 http 请求的 request 对象的 path 进行分支判断，代码如下："></a>其实方法比较土，就是利用 http 请求的 request 对象的 path 进行分支判断，代码如下：</h5><figure class="highlight javascript"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> route = url.parse(req.url).pathname;</span><br><span class="line">  <span class="keyword">let</span> htmlString;</span><br><span class="line">  <span class="keyword">switch</span> (route) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"/login"</span>:</span><br><span class="line">      htmlString = <span class="string">"您好！欢迎登陆！"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"/home"</span>:</span><br><span class="line">      htmlString = <span class="string">"欢迎光临，这是我的个人首页！"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      htmlString = <span class="string">"这是一个简单网站的路由"</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  res.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/html; charset=utf-8"</span> &#125;);</span><br><span class="line">  res.write(htmlString);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="代码相对较土，思路就是通过访问路径的-path-进行分支判断，然后针对每个分支进行单独的渲染；"><a href="#代码相对较土，思路就是通过访问路径的-path-进行分支判断，然后针对每个分支进行单独的渲染；" class="headerlink" title="代码相对较土，思路就是通过访问路径的 path 进行分支判断，然后针对每个分支进行单独的渲染；"></a>代码相对较土，思路就是通过访问路径的 path 进行分支判断，然后针对每个分支进行单独的渲染；</h5><h5 id="前面我们说过，在-request-对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；"><a href="#前面我们说过，在-request-对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；" class="headerlink" title="前面我们说过，在 request 对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；"></a>前面我们说过，在 request 对象里面，不仅可以拿到访问路径，还可以拿到请求的方法，这样，我们就可以在针对路径再对请求方法进行判断，然后进行对应操作；</h5>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/NodeJS/">#NodeJS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    <a href="https://github.com/klugjo">主题参考</a>
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/07/31/最Low的路由/">最Low的路由</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/09/最基本的模块-url/">NodeJS-1.6 最基本的模块-url</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/04/02/最Easy的Web服务器/">NodeJS-1.7 最Easy的Web服务器</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/03/30/最基本的模块-path/">NodeJS-1.4 最基本的模块-path</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Webpack/">Webpack</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/React/">React</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Node/">Node</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/kstar11">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:liuxuanpei@hotmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    © 2019 kstar-东君
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
